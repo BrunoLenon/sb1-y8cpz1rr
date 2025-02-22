@@ -26,14 +26,12 @@
   }
 
   /* Prevent iOS zoom on input focus */
-  input,
-  select,
-  textarea {
-    font-size: 16px;
+  input, select, textarea {
+    font-size: 16px !important;
   }
 
   /* Improve tap targets for mobile */
-  button,
+  button, 
   a,
   input[type="checkbox"],
   input[type="radio"] {
@@ -49,26 +47,7 @@
 
   /* Adjust grid columns for mobile */
   .grid {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-
-  /* Responsive typography */
-  h1 {
-    font-size: 1.5rem;
-  }
-  h2 {
-    font-size: 1.25rem;
-  }
-  h3 {
-    font-size: 1.125rem;
-  }
-
-  /* Responsive tables */
-  table {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
   }
 }
 
@@ -81,7 +60,7 @@
 
   /* Adjust grid columns for tablet */
   .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 }
 
@@ -94,10 +73,28 @@
   }
 }
 
+/* Responsive typography */
+@media (max-width: 640px) {
+  h1 { font-size: 1.5rem !important; }
+  h2 { font-size: 1.25rem !important; }
+  h3 { font-size: 1.125rem !important; }
+}
+
+/* Responsive tables */
+@media (max-width: 640px) {
+  .responsive-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 /* Touch-friendly scrolling */
 .touch-scroll {
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
 }
 
 /* Better focus states */
@@ -107,7 +104,7 @@
 }
 
 :focus-visible {
-  outline: 2px solid theme('colors.blue.500');
+  outline: 2px solid #3b82f6;
   outline-offset: 2px;
 }
 
@@ -144,6 +141,6 @@ html {
 /* Print styles */
 @media print {
   .no-print {
-    display: none;
+    display: none !important;
   }
 }
